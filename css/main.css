@@ -3,14 +3,27 @@ html{
   font-family: 'Poiret One', cursive;
 }
 
-body {
-  background-image: 
+#photo {
+  max-height: 100%;
+  max-width: 100%;
+  z-index: 0;
+}
+.container {
+  background-color: white;
+  opacity: .9;
+  border-radius: 5px;
+  z-index: 10;
+  width: 70%;
+  height: 60%;
+   position: absolute;
+  top: 3rem;
+  left: 12rem;
 }
 
 div.canvas{
   border-radius: 4px;
-  border: 2px solid grey;
-  margin-top: 3rem;
+  margin: 1rem;
+
 }
 
 .col-lg-6{
@@ -24,19 +37,29 @@ div.canvas{
 }
 
 .palette {
-  margin-top: 3rem;
+  position: absolute;
+  top: 38rem;
+  left: 35rem;
 }
 
 .palette div {
-  height: 20px;
-  width: 20px;
+  max-width: 10x;
   border-radius: 10rem;
   color: white;
-  text-align: center;
-  padding: 3rem;
+  padding: 1rem;
   margin:auto;
   border: 3px solid lightgrey;
+  transition: .25s;
+  opacity: .75
 }
+
+.palette div:hover{
+  cursor: pointer;
+  opacity: 1;
+  border-color: white;
+  transform: translateY(-5px);
+}
+
 .dark-blue{
   background-color: #69D2E7;
 }
@@ -58,7 +81,11 @@ div.canvas{
 }
 
 .pixel {
-  height: 10px;
+  height:10px;
   width: 10px;
-  border: 1px solid white;
+  border: 1px solid lightgrey;
+}
+
+.box-shadow {
+ box-shadow: 8px 8px 6px -6px black;
 }

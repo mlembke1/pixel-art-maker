@@ -3,14 +3,15 @@ const canvas = document.querySelector('.canvas')
 let currentColor;
 let newRow
 let pixel
+let pixels = document.getElementsByClassName('pixel')
 
 const createPixels = (x, y) => {
   newRow = document.createElement('div')
   for (var i = 0; i < x; i++) {
     pixel = document.createElement('div')
-    newRow.append(pixel)
     newRow.classList.add('row')
     pixel.classList.add('pixel')
+    newRow.append(pixel)
     canvas.append(newRow)
   }
   for (var i = 0; i < y; i++) {
@@ -21,18 +22,25 @@ const createPixels = (x, y) => {
     canvas.append(newRow)
   }
 }
-createPixels(900,900)
+createPixels(1720,1720)
 
 
 palette.addEventListener('click', function(event){
-    currentColor = event.target.classList[0]
-    })
+        currentColor = event.target.classList[0]
+  })
 
-
-canvas.addEventListener('click', function(event){
-    if(!event.target.classList.contains(currentColor)) {
-      event.target.classList.add(currentColor)
-    } else {
-      event.target.classList.remove(currentColor)
-    }
+let dragging = false;
+const start = (event) => {
+  dragging = true;
+  event.target.classList.add(currentColor)
+}
+const end = () => {
+  dragging = false;
+}
+canvas.addEventListener('mousedown', start)
+canvas.addEventListener('mousemove', function(event){
+  if(dragging === true){
+  event.target.classList.add(currentColor)
+  }
 })
+canvas.addEventListener('mouseup', end)
