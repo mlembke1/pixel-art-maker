@@ -10,12 +10,12 @@ let pixel
 // FUNCTION TO CREATE GRID OF DIVS
 const createPixels = (x, y) => {
   // newRow = document.createElement('div')
-  for (var i = 0; i < x; i++) {
+  for (let i = 0; i < x; i++) {
     newRow = document.createElement('div')
     newRow.classList.add('row')
     newRow.classList.add('flex')
     canvas.append(newRow)
-    for (var j = 0; j < y; j++) {
+    for (let j = 0; j < y; j++) {
       pixel = document.createElement('div')
       pixel.classList.add('pixel')
       newRow.append(pixel)
@@ -25,31 +25,26 @@ const createPixels = (x, y) => {
 createPixels(40, 86)
 
 // EVENT LISTER TO GET THE COLOR OF WHATEVER IS CLICK IN THE PALETTE
-palette.addEventListener('click', function(event) {
+palette.addEventListener('click', (event) => {
   currentColor = event.target.classList[0]
-  // if (event.target.classList.contains(!'selected')) {
-  //   event.target.classList.add('selected')
-  // } else {
-  //   event.target.classList.remove('selected')
-  // }
 })
 
 
 // THIS SECTION ALLOWS DRAWING/PAINTING FUNCTIONALITY
-//THE START AND END FUNCTIONS
+// THE START AND END FUNCTIONS
 let dragging = false;
 const start = (event) => {
   dragging = true;
-  // event.target.classList.remove(currentColor)
   event.target.classList.add(currentColor)
+  event.target.className = `pixel ${currentColor}`
 }
 const end = () => {
   dragging = false;
 }
 canvas.addEventListener('mousedown', start)
-canvas.addEventListener('mousemove', function(event) {
+canvas.addEventListener('mousemove', (event) => {
   if (dragging === true) {
-    event.target.classList.add(currentColor)
+    event.target.className = `pixel ${currentColor}`
   }
 })
 canvas.addEventListener('mouseup', end)
@@ -57,7 +52,7 @@ canvas.addEventListener('mouseup', end)
 
 // CLEAR CANVAS
 const clearCanvas = () => {
-  for (var i = 0; i < pixels.length; i++) {
+  for (let i = 0; i < pixels.length; i++) {
     pixels[i].className = 'pixel'
   }
 }

@@ -98,11 +98,6 @@ div.canvas {
   flex-wrap: nowrap;
 }
 
-.selected {
-  border-color: navy;
-  opacity: 1;
-}
-
 #clear-button {
   background-color: white;
   color: black;
