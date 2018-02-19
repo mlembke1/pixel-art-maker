@@ -1,6 +1,14 @@
-html{
+/***************GENERAL STYLING*******************/
+
+html {
   font-size: 16px;
   font-family: 'Poiret One', cursive;
+}
+
+body {
+  background-image: url('../ivy.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #photo {
@@ -8,6 +16,9 @@ html{
   max-width: 100%;
   z-index: 0;
 }
+
+/***************CANVAS STYLING*******************/
+
 .container {
   background-color: white;
   opacity: .9;
@@ -15,77 +26,101 @@ html{
   z-index: 10;
   width: 70%;
   height: 60%;
-   position: absolute;
-  top: 3rem;
-  left: 12rem;
+  margin-top: 5rem;
+  padding-top: .5rem;
 }
 
-div.canvas{
+div.canvas {
   border-radius: 4px;
   margin: 1rem;
-
 }
 
-.col-lg-6{
-  border: 1px solid black;
+.box-shadow {
+  box-shadow: 8px 8px 6px -6px black;
 }
 
-.red {
-  background-color: tomato;
-  color: white;
-  border-color: white;
-}
+/***************PALETTE STYLING*******************/
 
 .palette {
-  position: absolute;
-  top: 38rem;
-  left: 35rem;
+  margin: 2rem auto;
+  justify-content: center;
 }
 
 .palette div {
   max-width: 10x;
   border-radius: 10rem;
   color: white;
+  height: 1rem;
   padding: 1rem;
-  margin:auto;
+  margin: 1rem;
   border: 3px solid lightgrey;
   transition: .25s;
   opacity: .75
 }
 
-.palette div:hover{
+.palette div:hover {
   cursor: pointer;
   opacity: 1;
   border-color: white;
   transform: translateY(-5px);
 }
 
-.dark-blue{
+.dark-blue {
   background-color: #69D2E7;
 }
-.light-blue{
+
+.light-blue {
   background-color: #A7DBD8;
 }
-.white{
+
+.white {
   background-color: white;
 }
-.light-orange{
+
+.light-orange {
   background-color: #F38630;
 }
-.dark-orange{
+
+.dark-orange {
   background-color: #FA6900;
 }
 
-.flex-box {
-  flex-wrap: wrap;
-}
+/***************PIXEL STYLING*******************/
 
 .pixel {
-  height:10px;
+  height: 10px;
   width: 10px;
   border: 1px solid lightgrey;
 }
 
-.box-shadow {
- box-shadow: 8px 8px 6px -6px black;
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.selected {
+  border-color: navy;
+  opacity: 1;
+}
+
+#clear-button {
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  border: 2px solid grey;
+  height: 3rem;
+  margin: 0.7rem 0 0 2rem;
+  opacity: .7;
+  transition: .25s;
+}
+
+#clear-button:hover {
+  cursor: pointer;
+  border: 2px solid white;
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+#clear-button:focus {
+  outline: none;
 }
