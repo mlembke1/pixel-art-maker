@@ -27,11 +27,11 @@ createPixels(40, 86)
 // EVENT LISTER TO GET THE COLOR OF WHATEVER IS CLICK IN THE PALETTE
 palette.addEventListener('click', function(event) {
   currentColor = event.target.classList[0]
-  if (event.target.classList.contains(!'selected')) {
-    event.target.classList.add('selected')
-  } else {
-    event.target.classList.remove('selected')
-  }
+  // if (event.target.classList.contains(!'selected')) {
+  //   event.target.classList.add('selected')
+  // } else {
+  //   event.target.classList.remove('selected')
+  // }
 })
 
 
@@ -57,6 +57,8 @@ canvas.addEventListener('mouseup', end)
 
 // CLEAR CANVAS
 const clearCanvas = () => {
-  pixels.className = 'pixel'
+  for (var i = 0; i < pixels.length; i++) {
+    pixels[i].className = 'pixel'
+  }
 }
 clearButton.addEventListener('click', clearCanvas)
